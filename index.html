@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Neighborhood Financial Health Data</title>    
+
+    <!-- LeafletJS CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- LeafletJS JS file (must place after Leaflet's CSS file) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="helper.js"></script>
+    <script src="script.js"></script>    
+  </head>
+  
+  <body onload="init()">
+    <div id="banner" class="container center">
+      <h1> Neighborhood Financial Health Data </h1>
+    </div>
+    <div class="container subbanner">
+      <div>
+        <p>This example demonstrates displaying maps for locations of complaints made through <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9" target="_blank">311 Service Request</a> 
+          calls from NYC Open Data. Map functionality is provided through <a href="https://leafletjs.com/examples/quick-start/" target="_blank">LeafletJS</a>.
+          The latitude and longitude information of a complaint retrieved from NYC Open Data will be sent to showMap ( ) which displays
+             a map of the complaint location using Leaflet.js.
+       </div>
+  <nav class="container">
+    <a href="index.html">Homepage</a>
+    <a href="history.html">History</a>
+    <a href="culture.html">Culture</a>
+  </nav>
+      </div>
+    
+    <div id="output" class="container">
+      <div id="cards_output" class="container"></div>
+      <div id="map"></div>
+    </div>
+    
+    <div id="footer" class="container center">
+      <h3>Lesson 7.4 Practical</h3>
+    </div>  
+  </body>
+</html>
