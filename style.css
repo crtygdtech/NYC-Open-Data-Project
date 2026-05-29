@@ -14,6 +14,8 @@ html,body{
 
 nav{
   background-color:cornflowerblue;
+  border:solid 1px rgb(8, 19, 68);
+  border-radius:5px;
 }
 nav a{
   color:black;
