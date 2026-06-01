@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Neighborhood Financial Health Data</title>    
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
+    <title>WD Lesson 7.6 Practical</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
+    <script src="d3-5.8.2.min-c5268e33.js"></script>
+    <script src="c3.min-d2a1f852.js"></script>
     <script src="helper.js"></script>
-    <script src="script.js"></script>    
-  </head>
+    <script src="script.js"></script>
+   </head>
   
   <body onload="init()">
     <div id="banner" class="container center">
@@ -38,8 +37,34 @@
       <div id="map"></div>
     </div>
     
+    <div class="container">
+      <div id="panel">
+        <div class="card">
+          <h3>Select Chart Type</h3>
+          <select id="chartType" style="width:200px;">
+            <option value="bar">Select Chart Type</option>
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+          </select>
+        </div>
+        <div class="card">
+          <h3>Accidents by Borough</h3>
+          <p><span class="highlight">Scenario:</span> Aggregate the number of accidents by borough and create a chart to analyze the results.</p>
+          <a class="button" onclick="accidentsByBorough()"> Display </a>
+        </div>
+        <div class="card">
+          <h3>Accidents by Vehicle Type</h3>
+          <p><span class="highlight">Scenario:</span> Aggregate the number of accidents by vehicle type and create a chart to analyze the results.</p>
+          <a class="button" onclick="accidentsByVehicle()"> Display </a>
+        </div>
+      </div>
+      <div class="card">
+       <div id="chart"></div>
+      </div>
+    </div>
+
     <div id="footer" class="container center">
-      <h3>Copyright</h3>
+      <h3>Lesson 7.6 Practical</h3>
     </div>  
   </body>
 </html>
