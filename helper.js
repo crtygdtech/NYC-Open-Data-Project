@@ -22,13 +22,14 @@ function card( info ){
   let location = [info.latitude || 0 , info.longitude || 0];
   let build = `<div class="card fitted">
                     <h1>${info.borough}</h1>
-                    <h2>${info.scorerank}</h2>
-                    <h3>${info.nyc_poverty_rate}</h3>
-                    <p>${info.median_income}</p>
-                    
+                    <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
+                    <p>Median Income: ${info.median_income}</p>
+                    <h2>Score Rank: ${info.scorerank}</h2>
+                    <hr>
                     <h2>${info.goal}</h2>
-                    <h2>${info.year_published}</h2>
-              <input type="button" onclick="showMap( ${location} )" value="Map">
+                    <h2>${info.goalfullname}</h2>
+                    <h3>${info.goalfullname}</h3>
+                    <span>${info.year_published}</span>
         </div>`;
   return build;
 }

@@ -18,10 +18,12 @@
     </div>
     <div class="container subbanner">
       <div>
-        <p>This example demonstrates displaying maps for locations of complaints made through <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9" target="_blank">311 Service Request</a> 
-          calls from NYC Open Data. Map functionality is provided through <a href="https://leafletjs.com/examples/quick-start/" target="_blank">LeafletJS</a>.
-          The latitude and longitude information of a complaint retrieved from NYC Open Data will be sent to showMap ( ) which displays
-             a map of the complaint location using Leaflet.js.
+        <input type="text" id="borough" placeholder="Enter Borough">
+        <a class="button" onclick="filterByBorough()"> Search </a>
+        <input type="text" id="povertyrate_and_medianincome" placeholder="Enter Poverty Rate & Median Income">
+        <a class="button" onclick="filterByPovertyrateAndMedianIncome()"> Search </a>
+        <input type="text" id="yearpublished_or_goal" placeholder="Enter Year Published Or Goal">
+        <a class="button" onclick="filterByYearpublishedOrGoal()"> Search </a>
        </div>
       </div>
     <div>

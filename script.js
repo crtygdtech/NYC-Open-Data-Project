@@ -14,6 +14,83 @@ async function init(){
   }
   cards_output.innerHTML = build;
 }
+function filterByBorough(){
+  let borough= document.getElementById("boroughs").value;
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i+=1){
+    let info = data[i];
+    if(info.borough== borough){
+      build += `<div class="fitted card">
+                    <h1>${info.borough}</h1>
+                    <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
+                    <p>Median Income: ${info.median_income}</p>
+                    <h2>Score Rank: ${info.scorerank}</h2>
+                    <hr>
+                    <h2>${info.goal}</h2>
+                    <h2>${info.goalfullname}</h2>
+                    <h3>${info.goalfullname}</h3>
+                    <span>${info.year_published}</span>
+                </div>`;
+      ct += 1;
+    }
+  }
+  result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+}
+function filterByPovertyrateAndMedianIncome(){
+  let poverty_rate = document.getElementById("poverty_rates").value;
+  let median_income = document.getElementById("median_incomes").value;
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i+=1){
+    let info = data[i];
+    if(info.nyc_poverty_rate == poverty_rate && info.median_income== median_income){
+      build += `<div class="fitted card">
+                    <h1>${info.borough}</h1>
+                    <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
+                    <p>Median Income: ${info.median_income}</p>
+                    <h2>Score Rank: ${info.scorerank}</h2>
+                    <hr>
+                    <h2>${info.goal}</h2>
+                    <h2>${info.goalfullname}</h2>
+                    <h3>${info.goalfullname}</h3>
+                    <span>${info.year_published}</span>
+                </div>`;
+      ct += 1;
+    }
+  }
+  result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+}
+function filterByYearpublishedOrGoal(){
+  let year_published = document.getElementById("year_publishes").value;
+  let goal = document.getElementById("goals").value;
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i+=1){
+    let info = data[i];
+    if(info.year_published == year_published || info.goal == goal){
+      build += `<div class="fitted card">
+                    <h1>${info.borough}</h1>
+                    <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
+                    <p>Median Income: ${info.median_income}</p>
+                    <h2>Score Rank: ${info.scorerank}</h2>
+                    <hr>
+                    <h2>${info.goal}</h2>
+                    <h2>${info.goalfullname}</h2>
+                    <h3>${info.goalfullname}</h3>
+                    <span>${info.year_published}</span>
+                </div>`;
+      ct += 1;
+    }
+  }
+  result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+}
 function accidentsByBorough(){
   let q = 0, bk = 0, bx = 0, m = 0, s = 0;
   
