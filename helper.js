@@ -18,7 +18,10 @@ function showMap(lat, lon){
 }
 
 function card( info ){ 
-
+  output = document.getElementById("output");
+  result = document.getElementById("result");
+  
+  let ct = 0;
   let location = [info.latitude || 0 , info.longitude || 0];
   let build = `<div class="card fitted">
                     <h1>${info.borough}</h1>
@@ -32,7 +35,22 @@ function card( info ){
                     <span>${info.year_published}</span>
         </div>`;
   return build;
+
+  ct += 1;
 }
+ result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+
+  let complaint_types = fillDropDown("complaint_type");
+  document.getElementById("complaint_types").innerHTML = complaint_types;
+
+  let descriptors = fillDropDown("descriptor");
+  document.getElementById("descriptors").innerHTML = descriptors;
+
+  let agencies = fillDropDown("agency_name");
+  document.getElementById("agencies").innerHTML = agencies;
+
+
 function get(id){
   return document.getElementById(id);
 }

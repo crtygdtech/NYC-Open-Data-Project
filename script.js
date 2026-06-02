@@ -13,6 +13,7 @@ async function init(){
     build += card(info);
   }
   cards_output.innerHTML = build;
+  
 }
 function filterByBorough(){
   let borough= document.getElementById("boroughs").value;
