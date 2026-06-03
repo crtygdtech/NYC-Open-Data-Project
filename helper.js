@@ -41,19 +41,14 @@ function card( info ){
  result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 
-  let complaint_types = fillDropDown("complaint_type");
-  document.getElementById("complaint_types").innerHTML = complaint_types;
+  let poverty_rates = fillDropDown("poverty_rate");
+  document.getElementById("poverty_rates").innerHTML = poverty_rates;
 
-  let descriptors = fillDropDown("descriptor");
-  document.getElementById("descriptors").innerHTML = descriptors;
+  let median_incomes = fillDropDown("median_income");
+  document.getElementById("median_incomes").innerHTML = median_incomes;
 
-  let agencies = fillDropDown("agency_name");
-  document.getElementById("agencies").innerHTML = agencies;
-
-
-function get(id){
-  return document.getElementById(id);
-}
+  let goals = fillDropDown("goal");
+  document.getElementById("goals").innerHTML = goals;
 
 function displayChart( data, id, type ){
   let chart = c3.generate({

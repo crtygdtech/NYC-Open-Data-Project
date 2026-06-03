@@ -17,24 +17,23 @@
       <h1> Neighborhood Financial Health Data </h1>
     </div>
     <div class="container subbanner">
-      <div>
-        <input type="text" id="borough" placeholder="Enter Borough">
-        <a class="button" onclick="filterByBorough()"> Search </a>
-        <h3>By Zip Code and Agency </h3>
-          <p><span class="highlight">Scenario:</span>
-            Traverse through all the 311 Service Request and filter entries by zip code and agency.</p>
-          <input type="text" id="zip" placeholder="Enter Zip Code">
-          <select id="agencies"></select>
+      <div class="card">
+        <h3>By Year Published and Goal</h3>
+          <input type="text" id="year_publishes" placeholder="Enter Year">
+          <select id="goals"></select>
           <hr></hr>
-          <a class="button" onclick="filterByPovertyAndIncome()"> Search </a>
+          <a class="button" onclick="filterByYearAndGoal()"> Search </a>
         </div>
         <div class="card">
-          <h3>By Complaint Type or Descriptor</h3>
-          <p><span class="highlight">Scenario:</span>
-          <select id="complaint_types"></select>
-          <select id="descriptors"></select>
+          <h3>By Poverty Rate or Median Income</h3>
           <hr></hr>
-          <a class="button" onclick="filterByYearOrGoal()"> Search </a>
+          <select id="poverty_rates"></select>
+          <select id="median_incomes"></select>
+          <a class="button" onclick="filterByPovertyOrIncome()"> Search </a>
+       </div>
+       <div>
+        <input type="text" id="borough" placeholder="Enter Borough">
+        <a class="button" onclick="filterByBorough()"> Search </a>
        </div>
       </div>
     <div>

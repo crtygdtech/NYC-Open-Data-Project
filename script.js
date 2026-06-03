@@ -40,7 +40,7 @@ function filterByBorough(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-function filterByPovertyrateAndMedianIncome(){
+function filterByPovertyrateOrMedianIncome(){
   let poverty_rate = document.getElementById("poverty_rates").value;
   let median_income = document.getElementById("median_incomes").value;
   let build = "";
@@ -48,7 +48,7 @@ function filterByPovertyrateAndMedianIncome(){
 
   for(let i = 0; i < data.length; i+=1){
     let info = data[i];
-    if(info.nyc_poverty_rate == poverty_rate && info.median_income== median_income){
+    if(info.nyc_poverty_rate == poverty_rate || info.median_income== median_income){
       build += `<div class="fitted card">
                     <h1>${info.borough}</h1>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
@@ -66,7 +66,7 @@ function filterByPovertyrateAndMedianIncome(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-function filterByYearpublishedOrGoal(){
+function filterByYearpublishedAndGoal(){
   let year_published = document.getElementById("year_publishes").value;
   let goal = document.getElementById("goals").value;
   let build = "";
@@ -74,7 +74,7 @@ function filterByYearpublishedOrGoal(){
 
   for(let i = 0; i < data.length; i+=1){
     let info = data[i];
-    if(info.year_published == year_published || info.goal == goal){
+    if(info.year_published == year_published && info.goal == goal){
       build += `<div class="fitted card">
                     <h1>${info.borough}</h1>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
@@ -92,21 +92,21 @@ function filterByYearpublishedOrGoal(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-function accidentsByBorough(){
+function StatisticsByBorough(){
   let q = 0, bk = 0, bx = 0, m = 0, s = 0;
   
-  for(let i = 0; i < data.length; i++){
-    let accident = data[i];
-    if(accident.borough == "QUEENS"){
-      q++;
-    }else if(accident.borough == "MANHATTAN"){
-      m++;
-    }else if(accident.borough == "BROOKLYN"){
-      bk++;
-    }else if(accident.borough == "BRONX"){
-      bx++;
-    }else if(accident.borough == "STATEN ISLAND"){
-      s++;
+  for(let i = 0; i < data.length; i+=1){
+    let statistic = data[i];
+    if(statistic.borough == "QUEENS"){
+      q+=1;
+    }else if(statistic.borough == "MANHATTAN"){
+      m+=1;
+    }else if(statistic.borough == "BROOKLYN"){
+      bk+=1;
+    }else if(statistic.borough == "BRONX"){
+      bx+=1;
+    }else if(statistic.borough == "STATEN ISLAND"){
+      s+=1;
     }
   }
   
