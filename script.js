@@ -1,6 +1,6 @@
 let data, mapObj;
 
-async function init(){
+async function filter_init(){
   //let link = "https://data.cityofnewyork.us/resource/h9gi-nx95.json"
   let link = "data.json"
   info = await fetch(link);
@@ -11,8 +11,29 @@ async function init(){
   for(let i = 0; i < data.length; i+=1) {
     let info = data[i];
     build += card(info);
+    //console.log(i)
   }
+  
   cards_output.innerHTML = build;
+
+    let poverty_rates = fillDropDown("nyc_poverty_rate");
+  document.getElementById("poverty_rates").innerHTML = poverty_rates;
+
+  let median_incomes = fillDropDown("median_income");
+  document.getElementById("median_incomes").innerHTML = median_incomes;
+
+  let goals = fillDropDown("goal");
+  document.getElementById("goals").innerHTML = goals;
+  
+}
+async function chart_init(){
+  //let link = "https://data.cityofnewyork.us/resource/h9gi-nx95.json"
+  let link = "data.json"
+  info = await fetch(link);
+  data = await info.json();
+  
+
+
   
 }
 function filterByBorough(){
@@ -77,6 +98,7 @@ function filterByYearpublishedAndGoal(){
     if(info.year_published == year_published && info.goal == goal){
       build += `<div class="fitted card">
                     <h1>${info.borough}</h1>
+                    <h2>Neighborhood: ${info.neighborhoods}</h2>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
                     <p>Median Income: ${info.median_income}</p>
                     <h2>Score Rank: ${info.scorerank}</h2>
@@ -97,25 +119,57 @@ function StatisticsByBorough(){
   
   for(let i = 0; i < data.length; i+=1){
     let statistic = data[i];
-    if(statistic.borough == "QUEENS"){
+    console.log(statistic.borough)
+    if(statistic.borough == "Queens"){
       q+=1;
-    }else if(statistic.borough == "MANHATTAN"){
+    }else if(statistic.borough == "Manhattan"){
       m+=1;
-    }else if(statistic.borough == "BROOKLYN"){
+    }else if(statistic.borough == "Brooklyn"){
       bk+=1;
-    }else if(statistic.borough == "BRONX"){
+    }else if(statistic.borough == "Bronx"){
       bx+=1;
-    }else if(statistic.borough == "STATEN ISLAND"){
+    }else if(statistic.borough == "Staten Island"){
       s+=1;
     }
   }
   
   let chartData = [
-    ["QUEENS",q],
-    ["MANHATTAN",m],
-    ["BROOKLYN", bk],
-    ["BRONX", bx],
-    ["STATEN ISLAND", s]
+    ["Queens",q],
+    ["Manhattan",m],
+    ["Brooklyn", bk],
+    ["Bronx", bx],
+    ["Staten Island", s]
+  ]
+  
+  let chartType = get("chartType").value;
+  
+  displayChart(chartData,"output",chartType)
+}
+function StatisticsByCommunityDistrict(){
+  let q = 0, bk = 0, bx = 0, m = 0, s = 0;
+  
+  for(let i = 0; i < data.length; i+=1){
+    let statistic = data[i];
+    console.log(statistic.neighborhoods)
+    if(statistic.borough == "Queens"){
+      q+=1;
+    }else if(statistic.borough == "Manhattan"){
+      m+=1;
+    }else if(statistic.borough == "Brooklyn"){
+      bk+=1;
+    }else if(statistic.borough == "Bronx"){
+      bx+=1;
+    }else if(statistic.borough == "Staten Island"){
+      s+=1;
+    }
+  }
+  
+  let chartData = [
+    ["Queens",bx],
+    ["Manhattan",m],
+    ["Brooklyn", bk],
+    ["Bronx", bx],
+    ["Staten Island", s]
   ]
   
   let chartType = get("chartType").value;

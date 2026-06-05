@@ -18,13 +18,10 @@ function showMap(lat, lon){
 }
 
 function card( info ){ 
-  output = document.getElementById("output");
-  result = document.getElementById("result");
-  
-  let ct = 0;
   let location = [info.latitude || 0 , info.longitude || 0];
   let build = `<div class="card fitted">
                     <h1>${info.borough}</h1>
+                    <h2>Neighborhood: ${info.neighborhoods}</h2>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
                     <p>Median Income: ${info.median_income}</p>
                     <h2>Score Rank: ${info.scorerank}</h2>
@@ -36,19 +33,11 @@ function card( info ){
         </div>`;
   return build;
 
-  ct += 1;
+
 }
- result.innerHTML = `${ct} Results found.`
-  output.innerHTML = build;
 
-  let poverty_rates = fillDropDown("poverty_rate");
-  document.getElementById("poverty_rates").innerHTML = poverty_rates;
 
-  let median_incomes = fillDropDown("median_income");
-  document.getElementById("median_incomes").innerHTML = median_incomes;
 
-  let goals = fillDropDown("goal");
-  document.getElementById("goals").innerHTML = goals;
 
 function displayChart( data, id, type ){
   let chart = c3.generate({
