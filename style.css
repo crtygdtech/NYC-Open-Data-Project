@@ -6,6 +6,7 @@ html,body{
   display:flex;
   padding:10px;
   flex-wrap:wrap;
+  flex:1;
 }
 .center{
   justify-content:center;
@@ -34,6 +35,7 @@ nav a:hover{
 #banner{
   background-color:blue;
   color:white;
+  font-size:20px;
 }
 #footer{
   background-color:cornflowerblue;
@@ -95,4 +97,31 @@ nav a:hover{
 .highlight{
   font-style:italic;
   color:blue;
+}
+#intro{
+  text-align:center;
+  font-family:Segoe UI;
+}
+#style p{
+  text-align:center;
+  font-size:20px;
+  border:double rgb(8, 19, 68);
+  padding:7px 7px;
+  margin:3px 3px;
+  font-family:Segoe UI;
+
+}
+#home1{
+  max-width:1000px;
+  text-align:left;
+  padding:5px;
+}
+#home2{
+  max-width:1000px;
+  text-align:left;
+  padding:5px;
+}
+a{
+  text-align:center;
+  font-family:Helvetica;
 }
