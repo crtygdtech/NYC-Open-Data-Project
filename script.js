@@ -121,34 +121,3 @@ function StatisticsByBorough(){
   
   displayChart(chartData,"output",chartType)
 }
-function StatisticsByCommunityEthnicity(){
-  let w = 0, b = 0, a = 0, o = 0, h = 0;
-  
-  for(let i = 0; i < data.length; i+=1){
-    let statistic = data[i];
-    console.log(statistic.ethnicity)
-    if(statistic.ethnicity == "Perc_white"){
-      w+=1;
-    }else if(statistic.ethnicity == "perc_black"){
-      b+=1;
-    }else if(statistic.ethnicity == "perc_asian"){
-      a+=1;
-    }else if(statistic.ethnicity == "perc_other"){
-      o+=1;
-    }else if(statistic.ethnicity == "perc_hispanic"){
-      h+=1;
-    }
-  }
-  
-  let chartData = [
-    ["perc_white",w],
-    ["perc_black",b],
-    ["perc_asian", a],
-    ["perc_other", o],
-    ["perc_hispanic", h]
-  ]
-  
-  let chartType = get("chartType").value;
-  
-  displayChart(chartData,"output",chartType)
-}
