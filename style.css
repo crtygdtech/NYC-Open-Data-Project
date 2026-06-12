@@ -112,12 +112,12 @@ nav a:hover{
 
 }
 #home1{
-  max-width:max-content;
+  max-width:950px;
   text-align:left;
   padding:5px;
 }
 #home2{
-  max-width:fit-content;
+  max-width:950px;
   text-align:left;
   padding:5px;
 }
