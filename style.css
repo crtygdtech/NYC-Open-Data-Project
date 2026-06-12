@@ -14,7 +14,7 @@ html,body{
 }
 
 nav{
-  background-color:cornflowerblue;
+  background-color:paleturquoise;
   border:solid 1px rgb(8, 19, 68);
   border-radius:5px;
 }
@@ -33,12 +33,12 @@ nav a:hover{
   background-color:rgb(200,225,255);
 }
 #banner{
-  background-color:blue;
+  background-color:cornflowerblue;
   color:white;
   font-size:20px;
 }
 #footer{
-  background-color:cornflowerblue;
+  background-color:cyan;
   color:white;
   /*position:fixed;*/
   left: 0;
