@@ -29,7 +29,7 @@ function card( info ){
                     <h2>${info.goal}</h2>
                     <h2>${info.goalfullname}</h2>
                     <h3>${info.goalfullname}</h3>
-                    <span>${info.year_published}</span>
+                    <span>Year Published: ${info.year_published}</span>
         </div>`;
   return build;
 
