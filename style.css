@@ -115,12 +115,16 @@ nav a:hover{
 
 }
 #home1{
-  text-align:left;
+  text-align:center;
   padding:5px;
+  justify-content:center;
+  align-items:center;
 }
 #home2{
-  text-align:right;
+  text-align:center;
   padding:5px;
+  justify-content:center;
+  align-items:center;
 }
 a{
   text-align:center;
@@ -132,4 +136,7 @@ a{
   border:1px solid green;
   border-radius: 20px;
   padding:10px;
+}
+#image{
+  width:48px;
 }
