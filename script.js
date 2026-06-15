@@ -19,10 +19,16 @@ async function filter_init(){
     let poverty_rates = fillDropDown("nyc_poverty_rate");
   document.getElementById("poverty_rates").innerHTML = poverty_rates;
 
-  let median_incomes = fillDropDown("median_income");
+    let median_incomes = fillDropDown("median_income");
   document.getElementById("median_incomes").innerHTML = median_incomes;
 
-  let goals = fillDropDown("goal");
+    let totaloutcomes = fillDropDown("totaloutcome");
+  document.getElementById("total_outcomes").innerHTML = total_outcomes;
+
+    let indexscores = fillDropDown("indexscore");
+  document.getElementById("indexscores").innerHTML = indexscores;
+
+    let goals = fillDropDown("goal");
   document.getElementById("goals").innerHTML = goals;
   
 }
@@ -50,6 +56,36 @@ function filterByPovertyOrIncome(){
                     <h1>${info.borough}</h1>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
                     <p>Median Income: ${info.median_income}</p>
+                    <p>Total Outcome: ${info.totaloutcome}</p>
+                    <p>Indexscore: ${info.indexscore}</p>
+                    <h2>Score Rank: ${info.scorerank}</h2>
+                    <hr>
+                    <h2>${info.goal}</h2>
+                    <h2>${info.goalfullname}</h2>
+                    <h3>${info.goalfullname}</h3>
+                    <span>Year Published: ${info.year_published}</span>
+                </div>`;
+      ct += 1;
+    }
+  }
+  result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+}
+function filterByTotaloutcomeOrIndexscore(){
+  let totaloutcome = document.getElementById("totaloutcomes").value;
+  let indexscore = document.getElementById("indexscores").value;
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i+=1){
+    let info = data[i];
+    if(info.totaloutcome == totaloutcome || info.indexscore== indexscore){
+      build += `<div class="fitted card">
+                    <h1>${info.borough}</h1>
+                    <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
+                    <p>Median Income: ${info.median_income}</p>
+                    <p>Total Outcome: ${info.totaloutcome}</p>
+                    <p>Indexscore: ${info.indexscore}</p>
                     <h2>Score Rank: ${info.scorerank}</h2>
                     <hr>
                     <h2>${info.goal}</h2>
@@ -77,6 +113,8 @@ function filterByBoroughAndGoal(){
                     <h2>Neighborhood: ${info.neighborhoods}</h2>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
                     <p>Median Income: ${info.median_income}</p>
+                    <p>Total Outcome: ${info.totaloutcome}</p>
+                    <p>Indexscore: ${info.indexscore}</p>
                     <h2>Score Rank: ${info.scorerank}</h2>
                     <hr>
                     <h2>${info.goal}</h2>

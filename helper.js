@@ -24,6 +24,8 @@ function card( info ){
                     <h2>Neighborhood: ${info.neighborhoods}</h2>
                     <h3>Poverty Rate: ${info.nyc_poverty_rate}</h3>
                     <p>Median Income: ${info.median_income}</p>
+                    <p>Total Outcome: ${info.totaloutcome}</p>
+                    <p>Indexscore: ${info.indexscore}</p>
                     <h2>Score Rank: ${info.scorerank}</h2>
                     <hr>
                     <h2>${info.goal}</h2>
