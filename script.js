@@ -23,7 +23,7 @@ async function filter_init(){
   document.getElementById("median_incomes").innerHTML = median_incomes;
 
     let totaloutcomes = fillDropDown("totaloutcome");
-  document.getElementById("total_outcomes").innerHTML = total_outcomes;
+  document.getElementById("totaloutcomes").innerHTML = totaloutcomes;
 
     let indexscores = fillDropDown("indexscore");
   document.getElementById("indexscores").innerHTML = indexscores;
